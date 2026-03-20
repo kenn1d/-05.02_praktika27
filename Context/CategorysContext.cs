@@ -7,14 +7,14 @@ namespace praktika27.Context
     public class CategorysContext : Modell.Categorys
     {
         /// <summary> Метод загрузки данных из БД
-        public static ObservableCollection<ItemsContext> AllCategorys()
+        public static ObservableCollection<CategorysContext> AllCategorys()
         {
-            ObservableCollection<ItemsContext> allCategorys = new ObservableCollection<ItemsContext>();
+            ObservableCollection<CategorysContext> allCategorys = new ObservableCollection<CategorysContext>();
             SqlConnection connection;
             SqlDataReader dataCategorys = Connection.Query("SELECT * FROM [dbo].[Items]", out connection);
             while (dataCategorys.Read())
             {
-                allCategorys.Add(new ItemsContext()
+                allCategorys.Add(new CategorysContext()
                 {
                     Id = dataCategorys.GetInt32(0),
                     Name = dataCategorys.GetString(1)

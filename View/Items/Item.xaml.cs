@@ -10,7 +10,7 @@ namespace praktika27.View.Items
         public Item()
         {
             InitializeComponent();
-            DataContext = new VMItems();
+            DataContext = new ViewModell.VMItems();
         }
     }
 }
