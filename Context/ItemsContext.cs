@@ -1,9 +1,7 @@
 ﻿
 using praktika27.Classes;
-using praktika27.Modell;
 using System.Collections.ObjectModel;
 using System.Data.SqlClient;
-using System.Security.RightsManagement;
 
 namespace praktika27.Context
 {
@@ -28,7 +26,7 @@ namespace praktika27.Context
                 allItems.Add(new ItemsContext() {
                     Id = dataItems.GetInt32(0),
                     Name = dataItems.GetString(1),
-                    Price = dataItems.GetInt32(2),
+                    Price = dataItems.GetDouble(2),
                     Description = dataItems.GetString(3),
                     Category = dataItems.IsDBNull(4) ?
                         null : allCategorys.Where(x => x.Id == dataItems.GetInt32(4)).First() 

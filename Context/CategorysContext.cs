@@ -11,7 +11,7 @@ namespace praktika27.Context
         {
             ObservableCollection<CategorysContext> allCategorys = new ObservableCollection<CategorysContext>();
             SqlConnection connection;
-            SqlDataReader dataCategorys = Connection.Query("SELECT * FROM [dbo].[Items]", out connection);
+            SqlDataReader dataCategorys = Connection.Query("SELECT * FROM [dbo].[Categorys]", out connection);
             while (dataCategorys.Read())
             {
                 allCategorys.Add(new CategorysContext()

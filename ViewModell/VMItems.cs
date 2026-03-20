@@ -7,7 +7,11 @@ namespace praktika27.ViewModell
     public class VMItems : INotifyPropertyChanged
     {
         /// <summary> Коллекция предметов
-        public ObservableCollection<Context.ItemsContext> Items { get; set; }
+        public ObservableCollection<Context.ItemsContext> _items;
+        public ObservableCollection<Context.ItemsContext> Items { get => _items; set { 
+                _items = value;
+                OnProperityChanged();
+            } }
 
         /// <summary> Команда для добавления нового элемента
         public Classes.RelayCommand NewItem

@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using praktika27.ViewModell;
+using System.Windows.Controls;
 
 namespace praktika27.View
 {
@@ -10,6 +11,7 @@ namespace praktika27.View
         public Main()
         {
             InitializeComponent();
+            this.DataContext = new VMItems();
         }
     }
 }

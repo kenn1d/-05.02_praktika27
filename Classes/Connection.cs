@@ -4,11 +4,7 @@ namespace praktika27.Classes
 {
     public class Connection
     {
-        private static readonly string config = "server=student.permaviat.ru" +
-            "Trusted_Connection=No;" +
-            "DataBase=ShopContent;" +
-            "User=***" +
-            "PWD=***";
+        private static readonly string config = "server=localhost;DataBase=ShopContent;User Id=sa;Password=12345QWERTY;TrustServerCertificate=True";
 
         public static SqlConnection OpenConnection()
         {
