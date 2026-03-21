@@ -15,6 +15,23 @@ namespace praktika27.ViewModell
             // Загружаем предметы из БД
             Categorys = CategorysContext.AllCategorys();
 
+        public Classes.RelayCommand NewCategory
+        {
+            get
+            {
+                return new Classes.RelayCommand(obj =>
+                {
+                    // Создаём новую модель, сохраняя её в БД
+                    Context.CategorysContext newModell = new Context.CategorysContext(true);
+                    // Добавляем модель в коллекцию
+                    Categorys.Add(newModell);
+                    // Переходим на страницу добавления, указывая в качестве контекста
+                    // Модель, которая была только что создана
+                    MainWindow.init.frame.Navigate(new View.AddCategory(newModell));
+                });
+            }
+        }
+
         /// <summary> Событие изменения свойства
         public event PropertyChangedEventHandler PropertyChanged;
 

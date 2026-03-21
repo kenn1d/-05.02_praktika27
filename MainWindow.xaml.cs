@@ -9,15 +9,19 @@ namespace praktika27
     {
         public static MainWindow init;
         public View.Main Main = new View.Main();
+        public View.MainCategory MainCategory = new View.MainCategory();
 
         public MainWindow()
         {
-            InitializeComponent();
             init = this;
+            InitializeComponent();
             frame.Navigate(Main);
         }
 
-        private void OpenIndex(object sender, RoutedEventArgs e) =>
+        private void OpenIndexItems(object sender, RoutedEventArgs e) =>
             frame.Navigate(Main);
+
+        private void OpenIndexCategorys(object sender, RoutedEventArgs e) =>
+            frame.Navigate(MainCategory);
     }
 }
